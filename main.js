@@ -59,6 +59,7 @@ function draw()
     image(video, 0, 0, 450, 450);
 
     status_the_untold_story = the_untold_story.isPlaying();
+    status_music = music.isPlaying();
     fill("red");
     stroke("#FF0000");
     if(scoreleftwrist >= 0.2)
@@ -69,6 +70,16 @@ function draw()
         {
             the_untold_story.play();
             document.getElementById("yay").innerHTML = "playing the untold story";
+        }
+    }
+    if(scorerightwrist >= 0.2)
+    {
+        circle(rightwristX, rightwristY, 100);
+        music.stop();
+        if(status_music == false)
+        {
+            music.play();
+            document.getElementById("yay").innerHTML = "playing a harry potter themed song";
         }
     }
 }
